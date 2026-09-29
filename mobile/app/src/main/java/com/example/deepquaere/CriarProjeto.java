@@ -45,7 +45,6 @@ public class CriarProjeto extends AppCompatActivity {
     }
 
     private void enviarNovoProjetoParaApi(String nome) {
-        // Recuperar o token JWT guardado no Login
         SharedPreferences sharedPreferences = getSharedPreferences("DeepQuaerePrefs", Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("JWT_TOKEN", "");
 
@@ -56,8 +55,6 @@ public class CriarProjeto extends AppCompatActivity {
 
         ApiService apiService = RetrofitClient.getApiService();
 
-        // Como o Django exige data_inicio e data_fim obrigatoriamente,
-        // geramos a data atual em formato de texto (YYYY-MM-DD) para evitar erros 400.
         String dataAtual = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
         Projeto request = new Projeto();
@@ -65,7 +62,6 @@ public class CriarProjeto extends AppCompatActivity {
         request.setDataInicio(dataAtual);
         request.setDataFim(dataAtual);
 
-        // Garantir o formato correto do Header com "Bearer"
         String authHeader = token.startsWith("Bearer ") ? token : "Bearer " + token;
 
         apiService.criarProjeto(authHeader, request).enqueue(new Callback<Object>() {
@@ -73,7 +69,7 @@ public class CriarProjeto extends AppCompatActivity {
             public void onResponse(Call<Object> call, Response<Object> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(CriarProjeto.this, "Projeto criado com sucesso!", Toast.LENGTH_SHORT).show();
-                    finish(); // Fecha a tela de criação e volta para o Menu
+                    finish();
                 } else {
                     String erroMsg = "Erro ao criar projeto: " + response.code();
                     try {

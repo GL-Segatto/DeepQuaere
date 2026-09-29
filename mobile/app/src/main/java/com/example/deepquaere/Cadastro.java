@@ -30,7 +30,6 @@ public class Cadastro extends AppCompatActivity {
         btnConcluirCadastro = findViewById(R.id.btnConcluirCadastro);
         btnVoltarLogin = findViewById(R.id.btnVoltarLogin);
 
-        // Ação do botão de cadastro
         btnConcluirCadastro.setOnClickListener(v -> {
             String username = etNovoUsername.getText().toString().trim();
             String password = etNovaPassword.getText().toString().trim();
@@ -42,7 +41,6 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        // Ação para voltar ao Login
         btnVoltarLogin.setOnClickListener(v -> {
             Intent intent = new Intent(Cadastro.this, Login.class);
             startActivity(intent);

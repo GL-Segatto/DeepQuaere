@@ -28,7 +28,6 @@ public class ItemOrcamentoAdapter extends RecyclerView.Adapter<ItemOrcamentoAdap
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         ItemOrcamento item = listaItens.get(position);
 
-        // Substitua por getDescricao() ou o nome do método correspondente na sua classe ItemOrcamento
         holder.tvDescricao.setText(item.getDescricao());
         holder.tvValor.setText("R$ " + item.getValor());
     }

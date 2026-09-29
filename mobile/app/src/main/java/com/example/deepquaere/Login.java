@@ -29,13 +29,11 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Vinculando os componentes do XML
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnIrParaCadastro = findViewById(R.id.btnIrParaCadastro);
 
-        // Ação do Botão de Login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +50,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        // Ação para navegar para a tela de cadastro
         btnIrParaCadastro.setOnClickListener(v -> {
             Intent intent = new Intent(Login.this, Cadastro.class);
             startActivity(intent);

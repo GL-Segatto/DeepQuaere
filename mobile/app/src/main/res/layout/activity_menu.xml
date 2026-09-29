@@ -29,7 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Botão para ir para a lista de Projetos (MainActivity) -->
     <Button
         android:id="@+id/btnVerProjetos"
         android:layout_width="0dp"
@@ -41,7 +40,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="64dp"/>
 
-    <!-- Botão para Criar Projeto -->
     <Button
         android:id="@+id/btnCriarProjeto"
         style="?attr/materialButtonOutlinedStyle"

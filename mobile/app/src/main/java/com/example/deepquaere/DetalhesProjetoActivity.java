@@ -35,7 +35,6 @@ public class DetalhesProjetoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_projeto);
 
-        // 1. Recuperar o ID do projeto enviado pela Intent
         projetoId = getIntent().getIntExtra("PROJETO_ID", -1);
 
         if (projetoId == -1) {
@@ -44,7 +43,6 @@ public class DetalhesProjetoActivity extends AppCompatActivity {
             return;
         }
 
-        // 2. Inicializar componentes de UI
         recyclerViewItens = findViewById(R.id.recyclerViewItensOrcamento);
         if (recyclerViewItens != null) {
             recyclerViewItens.setLayoutManager(new LinearLayoutManager(this));
@@ -52,19 +50,16 @@ public class DetalhesProjetoActivity extends AppCompatActivity {
 
         tvTotalOrcamento = findViewById(R.id.tvTotalOrcamento);
 
-        // 3. Inicializar botão de voltar
         Button btnVoltar = findViewById(R.id.btnVoltar);
         if (btnVoltar != null) {
             btnVoltar.setOnClickListener(v -> finish());
         }
 
-        // 4. Configurar o Botão de Adicionar Item
         Button btnAdicionarItem = findViewById(R.id.btnAdicionarItem);
         if (btnAdicionarItem != null) {
             btnAdicionarItem.setOnClickListener(v -> mostrarDialogoAdicionarItem());
         }
 
-        // 5. Carregar os dados da API
         carregarItensOrcamento();
     }
 

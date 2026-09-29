@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- RecyclerView para a lista -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewItensOrcamento"
         android:layout_width="match_parent"
@@ -14,7 +13,6 @@
         android:layout_weight="1"
         android:layout_marginBottom="16dp"/>
 
-    <!-- TextView para exibir o Total do Orçamento -->
     <TextView
         android:id="@+id/tvTotalOrcamento"
         android:layout_width="match_parent"
@@ -26,7 +24,6 @@
         android:layout_marginBottom="12dp"
         android:gravity="end"/>
 
-    <!-- Botão para Adicionar Novo Item -->
     <Button
         android:id="@+id/btnAdicionarItem"
         android:layout_width="match_parent"

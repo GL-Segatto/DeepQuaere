@@ -20,7 +20,6 @@ class ProjetoViewSet(viewsets.ModelViewSet):
         return Projeto.objects.filter(usuarios=self.request.user)
 
     def perform_create(self, serializer):
-        # Guarda o projeto e associa automaticamente o utilizador autenticado
         projeto = serializer.save()
         projeto.usuarios.add(self.request.user)
 
@@ -53,13 +52,10 @@ class ItemOrcamentoViewSet(viewsets.ModelViewSet):
     serializer_class = ItemOrcamentoSerializer
 
     def get_queryset(self):
-        # Começa por obter todos os itens
         queryset = ItemOrcamento.objects.all()
         
-        # Verifica se o parâmetro 'projeto' foi enviado na query string (ex: ?projeto=1)
         projeto_id = self.request.query_params.get('projeto')
         if projeto_id is not None:
-            # Filtra os itens estritamente pelo ID do projeto correspondente
             queryset = queryset.filter(projeto_id=projeto_id)
             
         return queryset

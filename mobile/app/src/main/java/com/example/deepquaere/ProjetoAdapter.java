@@ -12,9 +12,8 @@ import java.util.List;
 public class ProjetoAdapter extends RecyclerView.Adapter<ProjetoAdapter.ProjetoViewHolder> {
 
     private List<Projeto> listaProjetos;
-    private OnProjetoClickListener listener; // Declaração do listener
+    private OnProjetoClickListener listener;,
 
-    // Construtor atualizado para receber o listener
     public ProjetoAdapter(List<Projeto> listaProjetos, OnProjetoClickListener listener) {
         this.listaProjetos = listaProjetos;
         this.listener = listener;
@@ -33,7 +32,6 @@ public class ProjetoAdapter extends RecyclerView.Adapter<ProjetoAdapter.ProjetoV
         holder.tvNome.setText(projeto.getNome());
         holder.tvDatas.setText("Início: " + projeto.getDataInicio());
 
-        // Configura o evento de clique para cada item da lista
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onProjetoClick(projeto);

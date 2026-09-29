@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Projeto> projetos = response.body();
 
-                    // Inicializa o adapter passando a lista e a ação de clique
                     projetoAdapter = new ProjetoAdapter(projetos, new ProjetoAdapter.OnProjetoClickListener() {
                         @Override
                         public void onProjetoClick(Projeto projeto) {

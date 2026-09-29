@@ -8,7 +8,6 @@
     android:padding="24dp"
     tools:context=".Login">
 
-    <!-- Campo de Usuário -->
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="0dp"
@@ -22,7 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <!-- Campo de Senha -->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="0dp"
@@ -36,7 +34,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsername" />
 
-    <!-- Botão de Entrar (Login) -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
@@ -48,7 +45,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-    <!-- Botão para Ir para a Tela de Cadastro -->
     <Button
         android:id="@+id/btnIrParaCadastro"
         style="?attr/materialButtonOutlinedStyle"
